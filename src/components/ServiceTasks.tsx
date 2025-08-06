@@ -28,8 +28,8 @@ const ServiceTasks: React.FC = () => {
 
     return (
         <div>
-            <ServiceTaskForm onAddTask={handleAdd} />
             <ServiceTaskList tasks={serviceTasks} />
+            <ServiceTaskForm onAddTask={handleAdd} />
         </div>
     );
 };

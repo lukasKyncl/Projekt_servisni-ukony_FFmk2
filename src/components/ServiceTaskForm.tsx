@@ -32,49 +32,52 @@ const ServiceTaskForm: React.FC<ServiceTaskFormProps> = ({ onAddTask }) => {
     };
 
     return (
-        <form onSubmit={handleSubmit} className='container mb-4'>
-            <div className='row g-3 align-items-center'>
-                <div className='col-md-4'>
-                    <label htmlFor="operation" className='form-label'>Úkon</label>
-                    <input
-                        type="text"
-                        placeholder="Úkon"
-                        className='form-control'
-                        id='operation'
-                        value={operation}
-                        onChange={(e) => setOperation(e.target.value)}
-                    />
+        <div>
+            <h2 className='text-center'>Přidat nový úkon</h2>
+            <form onSubmit={handleSubmit} className='container mb-4'>
+                <div className='row g-3 align-items-center'>
+                    <div className='col-md-4'>
+                        <label htmlFor="operation" className='form-label'>Úkon</label>
+                        <input
+                            type="text"
+                            placeholder="Úkon"
+                            className='form-control'
+                            id='operation'
+                            value={operation}
+                            onChange={(e) => setOperation(e.target.value)}
+                        />
+                    </div>
+                    <div className='col-md-2'>
+                        <label htmlFor="year" className='form-label'>Rok</label>
+                        <input
+                            type="number"
+                            placeholder="Rok"
+                            className='form-control'
+                            id='year'
+                            value={year}
+                            onChange={(e) => setYear(Number(e.target.value))}
+                            required
+                            min={2018}
+                            max={new Date().getFullYear()}
+                        />
+                    </div>
+                    <div className='col-md-3'>
+                        <label htmlFor="amount" className='form-label'>Částka</label>
+                        <input
+                            type="number"
+                            placeholder="Částka"
+                            className='form-control'
+                            id='amount'
+                            value={amount}
+                            onChange={(e) => setAmount(Number(e.target.value))}
+                        />
+                    </div>
+                    <div className='col-md-3 d-flex align-items-end'>
+                        <button type="submit" className='btn btn-primary'>Přidat Úkon</button>
+                    </div>
                 </div>
-                <div className='col-md-2'>
-                    <label htmlFor="year" className='form-label'>Rok</label>
-                    <input
-                        type="number"
-                        placeholder="Rok"
-                        className='form-control'
-                        id='year'
-                        value={year}
-                        onChange={(e) => setYear(Number(e.target.value))}
-                        required
-                        min={2018}
-                        max={new Date().getFullYear()}
-                    />
-                </div>
-                <div className='col-md-3'>
-                    <label htmlFor="amount" className='form-label'>Částka</label>
-                    <input
-                        type="number"
-                        placeholder="Částka"
-                        className='form-control'
-                        id='amount'
-                        value={amount}
-                        onChange={(e) => setAmount(Number(e.target.value))}
-                    />
-                </div>
-                <div className='col-md-3 d-flex align-items-end'>
-                    <button type="submit" className='btn btn-primary'>Přidat Úkon</button>
-                </div>
-            </div>
-        </form>
+            </form>
+        </div>
     );
 };
 
