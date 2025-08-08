@@ -28,7 +28,7 @@ function App() {
         </nav>
 
         <Routes>
-          <Route path="/" element={<Navigate to="/service-tasks" />} />
+          <Route path="/" element={<Navigate to="/home" />} />
           <Route path="/home" element={<HomeLayout />} />
           <Route path="/service-tasks" element={<ServiceTasks />} />
         </Routes>
